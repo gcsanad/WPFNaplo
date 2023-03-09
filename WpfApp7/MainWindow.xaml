@@ -1,0 +1,55 @@
+﻿<Window x:Class="WpfApp7.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp7"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <Label Content="Név" FontSize="50" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Height="50">
+            <TextBox Width="150" Height="50" x:Name="txtNev" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <Label Content="Tantárgy" FontSize="50" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Height="50" Grid.Row="1" Grid.Column="1">
+            <ComboBox Width="150" Height="50" x:Name="cboTantargy" HorizontalAlignment="Left">
+                <ComboBoxItem Content="Matematika"/>
+                <ComboBoxItem Content="Történelem"/>
+                <ComboBoxItem Content="Irodalom"/>
+                <ComboBoxItem Content="Nyelvtan"/>
+                <ComboBoxItem Content="Programozás"/>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel Grid.Row="2">
+            <Label Content="Dátum" FontSize="50" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" Height="50">
+            <DatePicker Height="50" Width="150" HorizontalAlignment="Left" x:Name="dpDatum"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3">
+            <Label Content="Jegy" FontSize="50" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="1" Height="50" Orientation="Horizontal">
+            <Label x:Name="lblJegy" Height="50" Width="50" HorizontalAlignment="Left" Foreground="Red" FontSize="30"/>
+            <Slider x:Name="sliJegy" Width="200" VerticalAlignment="Center" Minimum="1" IsSnapToTickEnabled="True" Maximum="5" Value="4" ValueChanged="sliJegy_ValueChanged" TickFrequency="1"/>
+        </StackPanel>
+        <Button Grid.Row="4" x:Name="btnRogzit" Grid.ColumnSpan="2" Content="Rögzít" FontSize="35" Height="50" Width="400" Click="btnRogzit_Click"/>
+    </Grid>
+</Window>
